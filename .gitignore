@@ -1,0 +1,20 @@
+# Client data from the brief: kept local, never pushed
+data/raw/
+
+# Python cache files, created automatically when code runs
+__pycache__/
+*.pyc
+
+# Virtual environments, if you create one
+.venv/
+venv/
+
+# Notebook autosaves, in case you open the script as a notebook
+.ipynb_checkpoints/
+
+# Credentials or tokens, if you ever store any locally
+.env
+
+# System and editor clutter
+.DS_Store
+.vscode/
