@@ -1,0 +1,2 @@
+decision_id,topic,what_you_saw,options_considered,choice,why,impact_tco2e,confidence,question_for_client,suggested_by
+D1,Example: Katowice Q4 electricity,Q4 marked as no data,"a) leave out; b) Q1-Q3 average; c) same quarter last year",b) Q1-Q3 average,Keeps a full year; Q1-Q3 are stable,"+X t vs leaving it out",medium,Send Q4 meter readings or invoices,me / AI / both

@@ -1,0 +1,6 @@
+source_file,source_reference,site_code,category,status,scope2_method,description,quantity,unit,spend_eur,method,ef_source,ef_id,ef_value,ef_unit,emissions_kgco2e,comment
+kestrel_electricity_2024.xlsx,Lyon/janv.-24,FR-LYO,S2,included,location,Electricity,,kWh,,activity-based,,,,kgCO2e/kWh,,
+kestrel_electricity_2024.xlsx,Lyon/janv.-24,FR-LYO,S2,included,market,Electricity,,kWh,,activity-based,,,,kgCO2e/kWh,,
+kestrel_ap_ledger_2024.csv,DocNo 5100000000,FR-ROA,S3.1,included,,Steel coil,,t,,mass-based,,,,kgCO2e/t,,
+kestrel_ap_ledger_2024.csv,DocNo 5100000001,DE-CHE,S3.1,included,,Fasteners,,EUR,,spend-based,,,,kgCO2e/EUR,,
+kestrel_ap_ledger_2024.csv,DocNo 5100000002,DE-CHE,S3.2,set aside,,Machine tool,,EUR,,,,,,,,Capital goods: not category 1
