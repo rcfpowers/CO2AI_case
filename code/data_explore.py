@@ -241,8 +241,20 @@ spend_based = category_1["factor_kg_per_t"].isna()
 category_1.loc[spend_based, "emissions_t"] = (
     category_1.loc[spend_based, "NetAmount_USD_22"] * category_1.loc[spend_based, "kg_emit_per_22_USD"] / 1000
 )
+category_1.loc[~spend_based, "emissions_t"] = (
+    category_1.loc[~spend_based, "Qty_t"] * category_1.loc[~spend_based, "factor_kg_per_t"] / 1000
+)
+category_1["method"] = np.where(spend_based, "spend-based", "average-data")
 
+cat1_by_country = (
+    category_1.groupby('CompanyCode')[["NetAmount_EUR", "emissions_t"]]
+    .sum()
+    .sort_values("emissions_t", ascending=False)
+)
+cat1_corporate = category_1[["NetAmount_EUR", "emissions_t"]].sum()
 
+print(cat1_by_country)
+print(cat1_corporate)
 # Total spend
 # 80-90% of Spend Concentration
 # Negative amounts
