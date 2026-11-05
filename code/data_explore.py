@@ -23,13 +23,13 @@ UNIT_TO_KG = {"TO": 1000,
               "KG": 1, 
               "kg": 1}
 
-# Aluminium Closed Loop: 19_504_5107_15_1
-# Steel Closed Loop: 19_504_5119_15_1
-# PP Closed Loop: 19_505_5147_15_1
+# Aluminium Primary: "19_504_5104_15_1"
+# Steel Primary: "19_504_5119_15_1"
+# PP Primary: "19_505_5147_15_1"
 DESNZ_MAP = {
-    "MG-ALU-ING": "19_504_5104_15_1",   # Metal: aluminium cans and foil (excl. forming)
-    "MG-STL-COIL": "19_504_5116_15_1",  # Metal: steel cans
-    "MG-PLA-PP": "19_505_5144_15_1",    # Plastics: PP (incl. forming)
+    "MG-ALU-ING": "19_504_5107_15_1",   # Metal: aluminium cans and foil (excl. forming) Closet Loop
+    "MG-STL-COIL": "19_504_5116_15_1",  # Metal: steel cans Closet Loop
+    "MG-PLA-PP": "19_505_5144_15_1",    # Plastics: PP (incl. forming) Closet Loop
 }
 
 NAICS_MAP = {
@@ -205,7 +205,10 @@ ledger_24['NetAmount_EUR'] = ledger_24['NetAmount'] / ledger_24['units_per_EUR']
 ledger_24['NetAmount_USD_24'] = ledger_24['NetAmount_EUR'] * USD_PER_EUR_2024
 ledger_24['NetAmount_USD_22'] = ledger_24['NetAmount_USD_24'] * CPI_22_24
 
+ledger_Mat_Null = ledger_24[ledger_24["MatGroup"].isnull()]
 ledger_24 = ledger_24[ledger_24["MatGroup"].notnull()]
+
+print(ledger_Mat_Null["ItemText"].nunique())
 
 print(ledger_24[['Currency', 'NetAmount', 'units_per_EUR', 'NetAmount_EUR', 'NetAmount_USD_24', 'NetAmount_USD_22']].head())
 
